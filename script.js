@@ -1,3 +1,37 @@
+const themeToggle = document.getElementById('themeToggle');
+const html = document.documentElement;
+
+// Check for saved theme preference or default to dark mode
+const currentTheme = localStorage.getItem('theme') || 'dark';
+html.setAttribute('data-theme', currentTheme);
+
+themeToggle.addEventListener('click', function() {
+    const currentTheme = html.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+});
+
+// Update navbar background on scroll for theme compatibility
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    const theme = html.getAttribute('data-theme');
+    
+    if (currentScroll <= 0) {
+        navbar.style.background = theme === 'light' 
+            ? 'rgba(255, 255, 255, 0.98)' 
+            : 'rgba(10, 14, 39, 0.95)';
+    } else {
+        navbar.style.background = theme === 'light'
+            ? 'rgba(255, 255, 255, 0.98)'
+            : 'rgba(10, 14, 39, 0.98)';
+        navbar.style.boxShadow = '0 5px 20px rgba(0, 168, 255, 0.1)';
+    }
+    
+    lastScroll = currentScroll;
+});
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -33,22 +67,8 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Navbar background on scroll
 const navbar = document.querySelector('.navbar');
 let lastScroll = 0;
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-
-    if (currentScroll <= 0) {
-        navbar.style.background = 'rgba(10, 14, 39, 0.95)';
-    } else {
-        navbar.style.background = 'rgba(10, 14, 39, 0.98)';
-        navbar.style.boxShadow = '0 5px 20px rgba(0, 168, 255, 0.1)';
-    }
-
-    lastScroll = currentScroll;
-});
 
 // Intersection Observer for fade-in animations
 const observerOptions = {
