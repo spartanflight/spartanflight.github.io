@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spartan Flight - SJSU UAS Competition Team</title>
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Skip to main content link for keyboard navigation -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Animated 3D Drone -->
-    <div class="drone-container" id="droneContainer">
+    <div class="drone-container" id="droneContainer" role="img" aria-label="Interactive 3D drone animation">
         <div class="drone">
             <div class="drone-body"></div>
             <div class="rotor rotor-1"></div>
@@ -19,10 +23,13 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <div class="logo">SPARTAN FLIGHT</div>
-            <ul class="nav-menu">
+            <div class="logo">
+                <img src="images/logo.jpg" alt="Spartan Flight Logo" class="logo-img">
+                <span>SPARTAN FLIGHT</span>
+            </div>
+            <ul class="nav-menu" role="menubar">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="#teams" class="nav-link">Teams</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
@@ -35,17 +42,19 @@
                 <li><a href="documentation.html" class="nav-link">Technical Docs</a></li>
                 <li><a href="blog.html" class="nav-link">Blog</a></li>
             </ul>
-            <div class="hamburger">
+            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
+    <main id="main-content">
     <section id="home" class="hero">
         <div class="hero-content">
+            <img src="images/logo.jpg" alt="Spartan Flight Logo" class="hero-logo">
             <h1 class="glitch" data-text="SPARTAN FLIGHT">SPARTAN FLIGHT</h1>
             <p class="hero-subtitle">San José State University's Student UAS Competition Team</p>
             <p class="hero-description">Building autonomous aerial systems for the 2025 SUAS competition</p>
@@ -256,6 +265,7 @@
 
     <!-- Contact Section -->
     <section id="contact" class="section contact">
+
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
             <div class="contact-content">
@@ -286,9 +296,10 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <p>&copy; 2025 Spartan Flight - San José State University</p>
             <p>Competing in the Student Unmanned Aerial Systems Competition</p>

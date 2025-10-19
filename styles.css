@@ -4,6 +4,23 @@
     box-sizing: border-box;
 }
 
+/* Skip to main content link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: var(--darker-bg);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    z-index: 10000;
+    font-weight: bold;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
 :root {
     --primary-color: #00a8ff;
     --secondary-color: #ffd700;
@@ -16,6 +33,33 @@
 
 html {
     scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--darker-bg);
+    border-left: 1px solid rgba(0, 168, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+    border-radius: 10px;
+    border: 2px solid var(--darker-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #0095e6, #ffcc00);
+    box-shadow: 0 0 10px rgba(0, 168, 255, 0.5);
+}
+
+/* Firefox scrollbar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) var(--darker-bg);
 }
 
 body {
@@ -317,13 +361,27 @@ body {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     font-size: 1.5rem;
     font-weight: 800;
+}
+
+.logo span {
     letter-spacing: 2px;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary-color);
 }
 
 .nav-menu {
@@ -372,6 +430,9 @@ body {
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0.5rem;
 }
 
 .hamburger span {
@@ -415,6 +476,29 @@ body {
     z-index: 10;
     max-width: 900px;
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    box-shadow: 0 0 30px rgba(0, 168, 255, 0.5);
+    margin-bottom: 2rem;
+    animation: logoFloat 3s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 .glitch {
@@ -964,9 +1048,20 @@ body {
     }
 
     .drone-container {
-        top: 15%;
-        right: 5%;
-        transform: scale(0.7);
+        display: none;
+    }
+
+    .drone {
+        transform-style: flat !important;
+        transform: none !important;
+    }
+
+    .drone-body,
+    .motor,
+    .arm,
+    .rotor {
+        transform: none !important;
+        animation: none !important;
     }
 
     .hero-buttons {
