@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Documentation - Spartan Flight</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated 3D Drone -->
+    <div class="drone-container">
+        <div class="drone">
+            <div class="drone-body"></div>
+            <div class="rotor rotor-1"></div>
+            <div class="rotor rotor-2"></div>
+            <div class="rotor rotor-3"></div>
+            <div class="rotor rotor-4"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">SPARTAN FLIGHT</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#teams" class="nav-link">Teams</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="index.html#rd" class="nav-link">R&D</a></li>
+                <li><a href="index.html#members" class="nav-link">Members</a></li>
+                <li><a href="index.html#sponsors" class="nav-link">Sponsors</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li class="nav-divider"></li>
+                <li><a href="gallery.html" class="nav-link">Vehicle</a></li>
+                <li><a href="documentation.html" class="nav-link active">Technical Docs</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Technical Documentation</h1>
+            <p class="page-subtitle">Design documentation, specifications, and testing procedures for our 2025 SUAS competition vehicle</p>
+        </div>
+    </section>
+
+    <!-- System Architecture -->
+    <section class="section doc-section">
+        <div class="container">
+            <h2 class="section-title">System Architecture</h2>
+            <div class="doc-content">
+                <div class="doc-item">
+                    <img src="images/docs/system-architecture.png" alt="System architecture diagram" class="doc-img">
+                    <div class="doc-text">
+                        <h3>Overall System Design</h3>
+                        <p>High-level overview of our UAV system architecture showing the integration between flight control, computer vision, payload delivery, and power distribution subsystems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Airframe Design -->
+    <section class="section doc-section">
+        <div class="container">
+            <h2 class="section-title">Airframe Design</h2>
+            <div class="docs-grid">
+                <div class="doc-card">
+                    <img src="images/docs/cad-full.png" alt="CAD full assembly" class="doc-img">
+                    <h3>CAD Model - Full Assembly</h3>
+                    <p>Complete 3D model showing structural design and component placement for optimal weight distribution and aerodynamics.</p>
+                </div>
+                <div class="doc-card">
+                    <img src="images/docs/cad-frame.png" alt="Frame design" class="doc-img">
+                    <h3>Frame Structure</h3>
+                    <p>Carbon fiber frame design optimized for strength-to-weight ratio and payload capacity.</p>
+                </div>
+                <div class="doc-card">
+                    <img src="images/docs/structural-analysis.png" alt="Structural analysis" class="doc-img">
+                    <h3>Structural Analysis</h3>
+                    <p>FEA results showing stress distribution under maximum takeoff weight conditions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Electronics & Avionics -->
+    <section class="section doc-section">
+        <div class="container">
+            <h2 class="section-title">Electronics & Avionics</h2>
+            <div class="docs-grid">
+                <div class="doc-card">
+                    <img src="images/docs/power-distribution.png" alt="Power distribution schematic" class="doc-img">
+                    <h3>Power Distribution System</h3>
+                    <p>Custom PCB design for efficient low-voltage power routing to avionics, Jetson, and payload electronics.</p>
+                </div>
+                <div class="doc-card">
+                    <img src="images/docs/bms-schematic.png" alt="BMS schematic" class="doc-img">
+                    <h3>Battery Management System</h3>
+                    <p>Custom BMS for Li-ion pack with individual cell monitoring, balancing, and protection circuitry.</p>
+                </div>
+                <div class="doc-card">
+                    <img src="images/docs/avionics-layout.png" alt="Avionics layout" class="doc-img">
+                    <h3>Avionics Bay Layout</h3>
+                    <p>Component placement and wiring diagram for flight controller, telemetry, and sensor systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Software Architecture -->
+    <section class="section doc-section">
+        <div class="container">
+            <h2 class="section-title">Software & Autonomy</h2>
+            <div class="docs-grid">
+                <div class="doc-card">
+                    <img src="images/docs/software-architecture.png" alt="Software architecture" class="doc-img">
+                    <h3>Software Stack</h3>
+                    <p>Architecture diagram showing ROS nodes, communication protocols, and data flow between subsystems.</p>
+                </div>
+                <div class="doc-card">
+                    <img src="images/docs/cv-pipeline.png" alt="Computer vision pipeline" class="doc-img">
+                    <h3>Vision Pipeline</h3>
+                    <p>Object detection and classification pipeline running on NVIDIA Jetson for real-time target identification.</p>
+                </div>
+                <div class="doc-card">
+                    <img src="images/docs/autonomy-flowchart.png" alt="Autonomy flowchart" class="doc-img">
+                    <h3>Autonomous Mission Logic</h3>
+                    <p>State machine and decision-making flowchart for autonomous navigation and payload delivery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payload System -->
+    <section class="section doc-section">
+        <div class="container">
+            <h2 class="section-title">Payload Delivery System</h2>
+            <div class="docs-grid">
+                <div class="doc-card">
+                    <img src="images/docs/payload-cad.png" alt="Payload mechanism CAD" class="doc-img">
+                    <h3>Mechanism Design</h3>
+                    <p>Servo-controlled precision drop mechanism with modular payload bays.</p>
+                </div>
+                <div class="doc-card">
+                    <img src="images/docs/payload-control.png" alt="Payload control diagram" class="doc-img">
+                    <h3>Control System</h3>
+                    <p>Electronic control interface and release timing logic for autonomous payload deployment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specifications -->
+    <section class="section specifications">
+        <div class="container">
+            <h2 class="section-title">Technical Specifications</h2>
+            <div class="specs-grid">
+                <div class="spec-category">
+                    <h3>Physical Characteristics</h3>
+                    <ul class="spec-list">
+                        <li><strong>Diameter:</strong> TBD</li>
+                        <li><strong>All-Up Weight:</strong> TBD</li>
+                        <li><strong>Payload Capacity:</strong> TBD</li>
+                        <li><strong>Thrust-to-Weight Ratio:</strong> TBD</li>
+                    </ul>
+                </div>
+                <div class="spec-category">
+                    <h3>Performance</h3>
+                    <ul class="spec-list">
+                        <li><strong>Max Speed:</strong> TBD</li>
+                        <li><strong>Flight Time:</strong> TBD</li>
+                        <li><strong>Range:</strong> TBD</li>
+                    </ul>
+                </div>
+                <div class="spec-category">
+                    <h3>Power System</h3>
+                    <ul class="spec-list">
+                        <li><strong>Battery:</strong> Custom Li-ion pack</li>
+                        <li><strong>Voltage:</strong> TBD</li>
+                        <li><strong>Capacity:</strong> TBD</li>
+                    </ul>
+                </div>
+                <div class="spec-category">
+                    <h3>Compute & Sensors</h3>
+                    <ul class="spec-list">
+                        <li><strong>Flight Controller:</strong> Pixhawk 6C</li>
+                        <li><strong>Computer Vision:</strong> NVIDIA Jetson</li>
+                        <li><strong>Camera:</strong> TBD</li>
+                        <li><strong>Telemetry:</strong> RFD900</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testing Procedures -->
+    <section class="section testing-procedures">
+        <div class="container">
+            <h2 class="section-title">Testing Procedures</h2>
+            <div class="procedure-grid">
+                <div class="procedure-card">
+                    <div class="procedure-number">01</div>
+                    <h3>Pre-Flight Checklist</h3>
+                    <ul>
+                        <li>Battery voltage and cell balance check</li>
+                        <li>Motor and propeller inspection</li>
+                        <li>Flight controller calibration verification</li>
+                        <li>Telemetry link test</li>
+                        <li>GPS lock confirmation</li>
+                        <li>Payload mechanism functional test</li>
+                    </ul>
+                </div>
+                <div class="procedure-card">
+                    <div class="procedure-number">02</div>
+                    <h3>Autonomous Flight Test</h3>
+                    <ul>
+                        <li>Upload mission waypoints</li>
+                        <li>Verify geofence boundaries</li>
+                        <li>ARM and takeoff to test altitude</li>
+                        <li>Execute autonomous waypoint navigation</li>
+                        <li>Monitor telemetry and system health</li>
+                        <li>Return to launch and land</li>
+                        <li>Download flight logs and telemetry data</li>
+                        <li>Analyze flight performance and system metrics</li>
+                    </ul>
+                </div>
+                <div class="procedure-card">
+                    <div class="procedure-number">03</div>
+                    <h3>Vision System Test</h3>
+                    <ul>
+                        <li>Calibrate camera and lens parameters</li>
+                        <li>Start object detection pipeline</li>
+                        <li>Verify real-time inference performance</li>
+                        <li>Test detection accuracy with known targets</li>
+                        <li>Log detection data for analysis</li>
+                        <li>Validate target coordinates</li>
+                    </ul>
+                </div>
+                <div class="procedure-card">
+                    <div class="procedure-number">04</div>
+                    <h3>Payload Drop Test</h3>
+                    <ul>
+                        <li>Load payload into delivery mechanism</li>
+                        <li>Position UAV over drop zone</li>
+                        <li>Execute drop command</li>
+                        <li>Verify release timing and accuracy</li>
+                        <li>Measure landing precision</li>
+                        <li>Log drop data and GPS coordinates</li>
+                        <li>Analyze accuracy metrics and iterate design</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Data -->
+    <section class="section performance-data">
+        <div class="container">
+            <h2 class="section-title">Test Results & Performance Data</h2>
+            <div class="data-grid">
+                <div class="data-card">
+                    <img src="images/docs/flight-data.png" alt="Flight test data" class="doc-img">
+                    <h3>Flight Test Data</h3>
+                    <p>Telemetry logs showing altitude, speed, and battery consumption over multiple test flights.</p>
+                </div>
+                <div class="data-card">
+                    <img src="images/docs/detection-results.png" alt="Detection accuracy" class="doc-img">
+                    <h3>Object Detection Performance</h3>
+                    <p>Precision and recall metrics for target detection under various lighting and altitude conditions.</p>
+                </div>
+                <div class="data-card">
+                    <img src="images/docs/drop-accuracy.png" alt="Drop accuracy data" class="doc-img">
+                    <h3>Payload Drop Accuracy</h3>
+                    <p>Statistical analysis of payload landing positions relative to target coordinates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Spartan Flight - San José State University</p>
+            <p>Competing in the Student Unmanned Aerial Systems Competition</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

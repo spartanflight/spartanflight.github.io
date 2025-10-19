@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spartan Flight - SJSU UAS Competition Team</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated 3D Drone -->
+    <div class="drone-container" id="droneContainer">
+        <div class="drone">
+            <div class="drone-body"></div>
+            <div class="rotor rotor-1"></div>
+            <div class="rotor rotor-2"></div>
+            <div class="rotor rotor-3"></div>
+            <div class="rotor rotor-4"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">SPARTAN FLIGHT</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="#teams" class="nav-link">Teams</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#rd" class="nav-link">R&D</a></li>
+                <li><a href="#members" class="nav-link">Members</a></li>
+                <li><a href="#sponsors" class="nav-link">Sponsors</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="nav-divider"></li>
+                <li><a href="gallery.html" class="nav-link">Vehicle</a></li>
+                <li><a href="documentation.html" class="nav-link">Technical Docs</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="glitch" data-text="SPARTAN FLIGHT">SPARTAN FLIGHT</h1>
+            <p class="hero-subtitle">San José State University's Student UAS Competition Team</p>
+            <p class="hero-description">Building autonomous aerial systems for the 2025 SUAS competition</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">Our Projects</a>
+                <a href="#contact" class="btn btn-secondary">Join the Team</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about">
+        <div class="container">
+            <div class="about-content">
+                <h2>About Spartan Flight</h2>
+                <p>Spartan Flight is San José State University's premier unmanned aerial systems team, competing annually in the Student Unmanned Aerial Systems (SUAS) Competition. We are a multidisciplinary team of students passionate about designing, building, and flying autonomous drones that push the boundaries of aerial robotics.</p>
+                <p>Our mission is to develop innovative UAS solutions while providing hands-on engineering experience to SJSU students across mechanical, electrical, software, and aerospace disciplines.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teams Section -->
+    <section id="teams" class="section teams">
+        <div class="container">
+            <h2 class="section-title">Our Teams</h2>
+            <div class="teams-grid">
+                <div class="team-card">
+                    <div class="team-icon">⚙️</div>
+                    <h3>Mechanical</h3>
+                    <p>Airframe design, structural analysis, payload mechanisms, and landing systems using CAD and composite manufacturing.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-icon">🔌</div>
+                    <h3>Electrical</h3>
+                    <p>Power distribution, powertrain, PCB design, sensor integration, telemetry systems, and electronics architecture for reliable flight operations.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-icon">💻</div>
+                    <h3>Software</h3>
+                    <p>Flight control algorithms, autonomy stack, computer vision, ground station software, and system integration.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-icon">💼</div>
+                    <h3>Business</h3>
+                    <p>Marketing, recruitment, sponsorships, funding, and team outreach to support our mission and grow the team.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <h2 class="section-title">Our Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image"></div>
+                    <div class="project-content">
+                        <h3>Custom Quadcopter Airframe</h3>
+                        <p>Quadcopter platform designed for stability, payload capacity, and competition flight requirements.</p>
+                        <a href="#" class="project-link">Learn More →</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image"></div>
+                    <div class="project-content">
+                        <h3>Target Detection System</h3>
+                        <p>Jetson-based computer vision for real-time object detection and classification of competition targets.</p>
+                        <a href="#" class="project-link">Learn More →</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image"></div>
+                    <div class="project-content">
+                        <h3>Payload Delivery Mechanism</h3>
+                        <p>Precision drop system with servo-controlled release for autonomous payload deployment.</p>
+                        <a href="#" class="project-link">Learn More →</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image"></div>
+                    <div class="project-content">
+                        <h3>Custom Li-ion Battery Pack & BMS</h3>
+                        <p>Custom-built lithium-ion pack using individual cells for weight reduction and increased capacity with intelligent battery management.</p>
+                        <a href="#" class="project-link">Learn More →</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image"></div>
+                    <div class="project-content">
+                        <h3>Low Voltage Power Distribution</h3>
+                        <p>Efficient power routing for avionics, Jetson, and payload electronics.</p>
+                        <a href="#" class="project-link">Learn More →</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image"></div>
+                    <div class="project-content">
+                        <h3>Photogrammetry with OpenCV</h3>
+                        <p>Aerial mapping and 3D reconstruction using OpenCV for competition mapping tasks.</p>
+                        <a href="#" class="project-link">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- R&D Section -->
+    <section id="rd" class="section rd">
+        <div class="container">
+            <h2 class="section-title">Research & Development</h2>
+            <div class="rd-content">
+                <div class="rd-item">
+                    <div class="rd-number">01</div>
+                    <div class="rd-text">
+                        <h3>VTOL Design</h3>
+                        <p>Vertical takeoff and landing aircraft configuration combining multirotor and fixed-wing capabilities for extended range and endurance.</p>
+                        <a href="rd/vtol.html" class="project-link">Learn More →</a>
+                    </div>
+                </div>
+                <div class="rd-item">
+                    <div class="rd-number">02</div>
+                    <div class="rd-text">
+                        <h3>FPGA Computer Vision Acceleration</h3>
+                        <p>Hardware offloading to accelerate computationally intensive CV algorithms beyond Jetson capabilities, reducing latency for real-time processing.</p>
+                        <a href="rd/fpga-cv.html" class="project-link">Learn More →</a>
+                    </div>
+                </div>
+                <div class="rd-item">
+                    <div class="rd-number">03</div>
+                    <div class="rd-text">
+                        <h3>GPS-Denied Localization</h3>
+                        <p>Visual-inertial odometry for navigation and positioning in GPS-degraded environments, enabling autonomous flight without satellite dependency.</p>
+                        <a href="rd/gps-denied.html" class="project-link">Learn More →</a>
+                    </div>
+                </div>
+                <div class="rd-item">
+                    <div class="rd-number">04</div>
+                    <div class="rd-text">
+                        <h3>Swarm Multi-Agent Tracking</h3>
+                        <p>Multi-drone coordination to persistently track and identify ground personnel across a distributed UAV network with shared intelligence.</p>
+                        <a href="rd/swarm-tracking.html" class="project-link">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Members Section -->
+    <section id="members" class="section members">
+        <div class="container">
+            <h2 class="section-title">Meet Our Team</h2>
+            <div class="members-grid">
+                <div class="member-card">
+                    <img src="images/members/ben.jpg" alt="Ben Nguyen" class="member-image">
+                    <h3>Ben Nguyen</h3>
+                    <p class="member-role">Chief Engineer & Electrical Lead</p>
+                    <div class="member-social">
+                        <a href="https://www.linkedin.com/in/benvn123/" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+                <div class="member-card">
+                    <img src="images/members/andy.jpg" alt="Andy Van" class="member-image">
+                    <h3>Andy Van</h3>
+                    <p class="member-role">Software Lead</p>
+                    <div class="member-social">
+                        <a href="https://www.linkedin.com/in/andy-van-029b1b243" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+                <div class="member-card">
+                    <img src="images/members/justin.jpg" alt="Justin Wang" class="member-image">
+                    <h3>Justin Wang</h3>
+                    <p class="member-role">Mechanical Lead</p>
+                    <div class="member-social">
+                        <a href="https://www.linkedin.com/in/justinwang450/" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+                <div class="member-card">
+                    <div class="member-image"></div>
+                    <h3>Brando Suarez</h3>
+                    <p class="member-role">Business Lead</p>
+                    <div class="member-social">
+                        <a href="https://www.linkedin.com/in/brando-suarez-b7a21b31a/" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section id="sponsors" class="section sponsors">
+        <div class="container">
+            <h2 class="section-title">Our Sponsors</h2>
+            <p class="sponsors-subtitle">Thank you to our sponsors and partners who make Spartan Flight possible</p>
+            <div class="sponsors-collage">
+                <img src="images/sponsors-collage.png" alt="Our Sponsors" class="sponsors-collage-img">
+            </div>
+            <div class="sponsor-cta">
+                <h3>Interested in Sponsoring Spartan Flight?</h3>
+                <p>Help us represent SJSU at the SUAS competition and advance UAS technology</p>
+                <a href="#contact" class="btn btn-primary">Become a Sponsor</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <span class="info-icon">📧</span>
+                        <span>spartanflightsjsu@gmail.com</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">📍</span>
+                        <span>San José State University</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">🕐</span>
+                        <span>General Meetings: Check our social media for times</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/spartan.flight/" target="_blank" class="social-link">Instagram</a>
+                        <a href="https://www.linkedin.com/company/spartan-flight" target="_blank" class="social-link">LinkedIn</a>
+                        <a href="https://discord.gg/Rk3ajtUAeU" target="_blank" class="social-link">Discord</a>
+                    </div>
+                </div>
+
+                <!-- Team Photo -->
+                <div class="team-photo">
+                    <img src="images/team-photo.jpg" alt="Spartan Flight Team" class="team-photo-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Spartan Flight - San José State University</p>
+            <p>Competing in the Student Unmanned Aerial Systems Competition</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
