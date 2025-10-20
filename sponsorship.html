@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsorship Packet - Spartan Flight</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .pdf-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            min-height: calc(100vh - 200px);
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            overflow: hidden;
+            background: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .pdf-viewer iframe {
+            width: 100%;
+            height: calc(100vh - 200px);
+            border: none;
+        }
+
+        .pdf-fallback {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .pdf-fallback h3 {
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+        }
+
+        .pdf-fallback p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .download-btn:hover {
+            background: #ffc944;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 184, 28, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">SPARTAN <span class="logo-accent">FLIGHT</span></a>
+            <nav>
+                <a href="index.html#about">About</a>
+                <a href="index.html#teams">Teams</a>
+                <a href="index.html#vehicle">Vehicle</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="index.html#blog">Blog</a>
+                <a href="index.html#sponsors">Sponsors</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <h1>Sponsorship Packet</h1>
+        <p>Partner with Spartan Flight to support the next generation of aerospace engineers</p>
+    </section>
+
+    <section class="white">
+        <div class="pdf-container">
+            <div class="pdf-viewer">
+                <!-- TODO: Replace 'sponsorship-packet.pdf' with the actual PDF filename when available -->
+                <!-- The PDF should be placed in the root directory or in a 'documents' folder -->
+                <iframe src="sponsorship-packet.pdf" type="application/pdf"></iframe>
+            </div>
+
+            <!-- Fallback content if PDF doesn't load -->
+            <div class="pdf-fallback" style="display: none;">
+                <h3>Sponsorship Packet</h3>
+                <p>View or download our sponsorship packet to learn about partnership opportunities with Spartan Flight.</p>
+                <a href="sponsorship-packet.pdf" download class="download-btn">Download Sponsorship Packet (PDF)</a>
+                <p style="margin-top: 2rem; color: var(--text-light);">
+                    For questions about sponsorship opportunities, please contact us at<br>
+                    <a href="mailto:spartanflightsjsu@gmail.com" style="color: var(--primary-blue); text-decoration: none; font-weight: 600;">spartanflightsjsu@gmail.com</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="section-container">
+            <p>&copy; 2025 Spartan Flight | San José State University | Student Unmanned Aerial Systems Competition Team</p>
+        </div>
+    </footer>
+
+    <script>
+        // Check if PDF loaded successfully
+        const iframe = document.querySelector('.pdf-viewer iframe');
+        const fallback = document.querySelector('.pdf-fallback');
+
+        iframe.addEventListener('error', function() {
+            document.querySelector('.pdf-viewer').style.display = 'none';
+            fallback.style.display = 'block';
+        });
+
+        // For browsers that don't support PDF viewing in iframe
+        setTimeout(function() {
+            if (iframe.contentDocument === null) {
+                document.querySelector('.pdf-viewer').style.display = 'none';
+                fallback.style.display = 'block';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

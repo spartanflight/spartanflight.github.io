@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vehicle Gallery - Spartan Flight</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Swarm Multi-Agent Tracking - Spartan Flight</title>
+    <link rel="stylesheet" href="../styles.css">
     <style>
         .coming-soon-section {
             min-height: calc(100vh - 300px);
@@ -39,38 +39,60 @@
             color: var(--accent-gold);
             font-weight: 600;
         }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-gold);
+        }
+
+        .back-link::before {
+            content: '‹';
+            font-size: 1.5rem;
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="nav-container">
-            <a href="index.html" class="logo">SPARTAN <span class="logo-accent">FLIGHT</span></a>
+            <a href="../index.html" class="logo">SPARTAN <span class="logo-accent">FLIGHT</span></a>
             <nav>
-                <a href="index.html#about">About</a>
-                <a href="index.html#teams">Teams</a>
-                <a href="index.html#vehicle">Vehicle</a>
-                <a href="index.html#projects">Projects</a>
-                <a href="index.html#blog">Blog</a>
-                <a href="index.html#sponsors">Sponsors</a>
-                <a href="index.html#contact">Contact</a>
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#teams">Teams</a>
+                <a href="../index.html#vehicle">Vehicle</a>
+                <a href="../index.html#projects">Projects</a>
+                <a href="../index.html#blog">Blog</a>
+                <a href="../index.html#sponsors">Sponsors</a>
+                <a href="../index.html#contact">Contact</a>
             </nav>
         </div>
     </header>
 
     <section class="page-header">
-        <h1>Vehicle Gallery</h1>
-        <p>Our multicopter platform designed for the 2026 SUAS competition</p>
+        <h1>Swarm Multi-Agent Tracking</h1>
+        <p>Software Engineering Project | R&D Initiative</p>
     </section>
 
     <section class="white coming-soon-section">
         <div class="section-container">
+            <a href="../projects.html" class="back-link">Back to Projects</a>
+
             <div class="coming-soon-content">
                 <h2>Coming Soon</h2>
                 <p>
-                    We're currently building our competition vehicle! Once the final drone is completed, this page will showcase detailed photos, specifications, flight test videos, and build process documentation.
+                    Detailed technical documentation for this project is currently being developed. This page will include system architecture, implementation details, testing results, and performance metrics.
                 </p>
                 <p>
-                    Check back soon for updates on our progress!
+                    Check back soon for updates!
                 </p>
             </div>
         </div>

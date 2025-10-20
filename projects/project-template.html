@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Quadcopter Airframe - Spartan Flight</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .project-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .quick-specs {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 3rem;
+        }
+
+        .quick-specs h3 {
+            color: var(--primary-blue);
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .spec-item {
+            text-align: center;
+        }
+
+        .spec-value {
+            font-size: 1.8rem;
+            color: var(--accent-gold);
+            font-weight: 800;
+            margin-bottom: 0.3rem;
+        }
+
+        .spec-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .project-content h3 {
+            color: var(--primary-blue);
+            font-size: 1.6rem;
+            margin: 3rem 0 1rem;
+            font-weight: 800;
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 0.5rem;
+        }
+
+        .project-content h4 {
+            color: var(--primary-blue);
+            font-size: 1.3rem;
+            margin: 2rem 0 1rem;
+            font-weight: 700;
+        }
+
+        .project-content p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .project-content ul {
+            margin: 1rem 0 1.5rem 1.5rem;
+        }
+
+        .project-content ul li {
+            color: var(--text-light);
+            margin: 0.5rem 0;
+            line-height: 1.7;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin: 2rem 0;
+            background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: var(--white);
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .tech-table th {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .tech-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+            color: var(--text-light);
+        }
+
+        .tech-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .tech-table td:first-child {
+            font-weight: 600;
+            color: var(--primary-blue);
+            width: 40%;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-gold);
+        }
+
+        .back-link::before {
+            content: '‹';
+            font-size: 1.5rem;
+        }
+
+        .callout {
+            background: rgba(255, 184, 28, 0.1);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .callout p {
+            margin: 0;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="logo">SPARTAN <span class="logo-accent">FLIGHT</span></a>
+            <nav>
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#teams">Teams</a>
+                <a href="../index.html#vehicle">Vehicle</a>
+                <a href="../index.html#projects">Projects</a>
+                <a href="../index.html#blog">Blog</a>
+                <a href="../index.html#sponsors">Sponsors</a>
+                <a href="../index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <h1>Custom Quadcopter Airframe</h1>
+        <p>Mechanical Engineering Project | Current Initiative</p>
+    </section>
+
+    <section class="white">
+        <div class="section-container">
+            <div class="project-content">
+                <a href="../projects.html" class="back-link">Back to Projects</a>
+
+                <span class="status-badge">In Development</span>
+
+                <!-- Quick Specs Overview -->
+                <div class="quick-specs">
+                    <h3>Quick Specifications</h3>
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <div class="spec-value">650mm</div>
+                            <div class="spec-label">Wheelbase</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-value">Carbon Fiber</div>
+                            <div class="spec-label">Material</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-value">TBD</div>
+                            <div class="spec-label">Weight</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-value">TBD</div>
+                            <div class="spec-label">Max Payload</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Overview</h3>
+                <p>The custom quadcopter airframe serves as the structural foundation for our SUAS competition vehicle. This project encompasses the complete mechanical design, analysis, and manufacturing of a purpose-built UAV platform optimized for autonomous operations, payload delivery, and extended flight endurance.</p>
+
+                <p>Our design philosophy centers on achieving an optimal balance between structural rigidity, weight minimization, and modularity. The airframe must withstand the dynamic loads of autonomous flight maneuvers while providing mounting interfaces for avionics, computer vision systems, and competition-specific payload mechanisms.</p>
+
+                <!-- Placeholder for CAD render or photo -->
+                <div class="project-image">CAD Render / Photo Placeholder</div>
+
+                <h3>Design Methodology</h3>
+
+                <h4>Requirements Analysis</h4>
+                <p>The airframe design was derived from a comprehensive analysis of SUAS competition requirements and operational constraints. Key driving requirements include:</p>
+                <ul>
+                    <li>Minimum flight time of 15 minutes at cruise speed with full payload</li>
+                    <li>Structural accommodation for 2+ lbs payload delivery system</li>
+                    <li>Camera mounting with minimal vibration transmission</li>
+                    <li>Modular design enabling rapid component replacement in field conditions</li>
+                    <li>Weather resistance for electronics bays (IP54 minimum)</li>
+                    <li>Compliance with competition size and safety constraints</li>
+                </ul>
+
+                <h4>Material Selection</h4>
+                <p>Carbon fiber composite was selected as the primary structural material based on multi-objective optimization considering strength-to-weight ratio, manufacturability, and cost constraints. The arms utilize pultruded carbon fiber tubes (16mm OD) providing excellent torsional rigidity while minimizing weight. Center plates are constructed from carbon fiber sheet stock (3mm thickness) with strategically placed cutouts to reduce mass while maintaining structural integrity in high-stress regions.</p>
+
+                <p>Secondary structural components utilize aerospace-grade aluminum (6061-T6) for motor mounts and payload bay attachments, providing the necessary hardness for threaded inserts and wear resistance at connection points.</p>
+
+                <h4>Structural Analysis</h4>
+                <p>Finite element analysis (FEA) was conducted using SolidWorks Simulation to validate the airframe design under various loading conditions. Analysis cases included:</p>
+                <ul>
+                    <li>Static loading: Maximum thrust scenario (4x motor thrust at full throttle)</li>
+                    <li>Dynamic loading: Simulated hard landing impact (3G deceleration)</li>
+                    <li>Vibration analysis: Modal analysis to identify natural frequencies and avoid resonance with motor/propeller combinations</li>
+                    <li>Thermal analysis: Heat dissipation from battery and ESCs in enclosed bays</li>
+                </ul>
+
+                <div class="callout">
+                    <p><strong>Key Finding:</strong> FEA results indicated maximum von Mises stress of 45 MPa in arm-to-center-plate joints during max thrust scenario, well below carbon fiber tensile strength (600+ MPa), providing safety factor >13.</p>
+                </div>
+
+                <h3>Technical Specifications</h3>
+                <table class="tech-table">
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Value</th>
+                    </tr>
+                    <tr>
+                        <td>Airframe Type</td>
+                        <td>Quadcopter (X configuration)</td>
+                    </tr>
+                    <tr>
+                        <td>Diagonal Wheelbase</td>
+                        <td>650mm (motor center to motor center)</td>
+                    </tr>
+                    <tr>
+                        <td>Arm Material</td>
+                        <td>Carbon fiber pultruded tube (16mm OD, 14mm ID)</td>
+                    </tr>
+                    <tr>
+                        <td>Center Plate Material</td>
+                        <td>Carbon fiber sheet (3mm thickness)</td>
+                    </tr>
+                    <tr>
+                        <td>Motor Mount Type</td>
+                        <td>Aluminum 6061-T6, M3 bolt pattern</td>
+                    </tr>
+                    <tr>
+                        <td>Landing Gear</td>
+                        <td>Retractable carbon fiber struts</td>
+                    </tr>
+                    <tr>
+                        <td>Payload Bay Dimensions</td>
+                        <td>200mm x 150mm x 100mm (L x W x H)</td>
+                    </tr>
+                    <tr>
+                        <td>Estimated Dry Weight</td>
+                        <td>~800g (frame only, excluding electronics)</td>
+                    </tr>
+                    <tr>
+                        <td>Maximum Takeoff Weight</td>
+                        <td>~5.5 kg (with battery, payload, and all systems)</td>
+                    </tr>
+                </table>
+
+                <!-- Placeholder for exploded view or assembly diagram -->
+                <div class="project-image">Assembly Diagram Placeholder</div>
+
+                <h3>System Architecture</h3>
+
+                <h4>Modular Component Layout</h4>
+                <p>The airframe architecture follows a modular design philosophy enabling independent subsystem development and simplified maintenance. The center body is divided into three functional zones:</p>
+
+                <p><strong>Upper Deck:</strong> Flight controller, GPS module, and telemetry systems. This region is sealed with an acrylic access plate and foam gasket to provide weather protection while allowing RF signal transmission.</p>
+
+                <p><strong>Mid Deck:</strong> Battery bay with quick-release mechanism. The battery tray slides into machined rails allowing tool-free battery swaps in under 30 seconds. Integrated XT90 connectors provide power distribution to the lower electronics bay.</p>
+
+                <p><strong>Lower Deck:</strong> Companion computer (NVIDIA Jetson), power distribution board, and ESC mounting. Dedicated air channels direct propeller wash through this region for passive cooling of high-power electronics.</p>
+
+                <h4>Vibration Isolation</h4>
+                <p>Camera and sensor systems are mounted on a sub-plate isolated from the main airframe via four damping grommets (Sorbothane, 50 durometer). This configuration provides >80% vibration attenuation in the 20-200 Hz range, critical for maintaining image quality during flight operations.</p>
+
+                <h3>Manufacturing & Assembly</h3>
+                <p>Manufacturing leverages both off-the-shelf components and custom fabrication. Carbon fiber arms are sourced from commercial suppliers (T-Motor, DJI), while center plates and mounting brackets are custom-cut using CNC waterjet machining from carbon fiber sheet stock. This hybrid approach balances manufacturing complexity with customization needs.</p>
+
+                <p>Assembly utilizes M3 stainless steel fasteners throughout with Loctite 243 thread locker on all flight-critical joints. Arm-to-body connections employ aluminum clamps with anti-rotation pins, allowing arm replacement without complete disassembly.</p>
+
+                <h3>Testing & Validation</h3>
+
+                <h4>Ground Testing</h4>
+                <p>Prior to flight testing, the airframe undergoes comprehensive ground validation:</p>
+                <ul>
+                    <li><strong>Static load testing:</strong> Suspended load testing up to 150% of maximum expected thrust to verify joint integrity</li>
+                    <li><strong>Drop testing:</strong> Controlled drops from 1m height onto hard surface to validate landing gear and impact absorption</li>
+                    <li><strong>Vibration characterization:</strong> Accelerometer measurements at various throttle settings to map vibration environment</li>
+                </ul>
+
+                <h4>Flight Testing (Planned)</h4>
+                <p>Flight testing will follow a progressive test plan:</p>
+                <ol>
+                    <li>Hover stability assessment (no payload, minimal wind)</li>
+                    <li>Incremental payload addition up to maximum capacity</li>
+                    <li>Endurance testing at cruise throttle settings</li>
+                    <li>Dynamic maneuvers (rapid pitch/roll, emergency descents)</li>
+                    <li>Environmental testing (wind resistance, temperature extremes)</li>
+                </ol>
+
+                <h3>Current Status & Development Timeline</h3>
+                <p>The project is currently in the detailed design phase. CAD models are finalized and undergoing peer review by faculty advisors. Material procurement is in progress, with carbon fiber stock and fasteners on order. Manufacturing is scheduled to begin in December 2025, with first flight testing planned for January 2026.</p>
+
+                <table class="tech-table">
+                    <tr>
+                        <th>Milestone</th>
+                        <th>Target Date</th>
+                    </tr>
+                    <tr>
+                        <td>Design Review Complete</td>
+                        <td>November 2025</td>
+                    </tr>
+                    <tr>
+                        <td>Material Procurement</td>
+                        <td>November 2025</td>
+                    </tr>
+                    <tr>
+                        <td>Manufacturing Complete</td>
+                        <td>December 2025</td>
+                    </tr>
+                    <tr>
+                        <td>Ground Testing</td>
+                        <td>January 2026</td>
+                    </tr>
+                    <tr>
+                        <td>First Flight</td>
+                        <td>January 2026</td>
+                    </tr>
+                    <tr>
+                        <td>Competition Ready</td>
+                        <td>March 2026</td>
+                    </tr>
+                </table>
+
+                <h3>Challenges & Lessons Learned</h3>
+                <p><strong>Weight Budget Management:</strong> Initial design iterations exceeded weight targets by ~200g. Iterative optimization through strategic material removal and component selection brought the design within budget while maintaining structural margins.</p>
+
+                <p><strong>Manufacturing Constraints:</strong> Access to composite layup facilities is limited. Design was adapted to utilize pre-manufactured carbon fiber stock rather than custom layup, simplifying manufacturing at the cost of some weight efficiency.</p>
+
+                <p><strong>Thermal Management:</strong> Early analysis revealed potential overheating of ESCs in enclosed lower bay. Design was revised to incorporate forced airflow channels utilizing propeller downwash for cooling.</p>
+
+                <h3>Future Work</h3>
+                <ul>
+                    <li>Integration of retractable landing gear system for improved aerodynamics</li>
+                    <li>Optimization for reduced radar cross-section (potential future competition requirement)</li>
+                    <li>Investigation of hybrid VTOL configuration for extended range missions</li>
+                    <li>Development of quick-swap arm system for field repairs</li>
+                    <li>Integration of structural health monitoring sensors (strain gauges) for real-time damage detection</li>
+                </ul>
+
+                <h3>Team Members</h3>
+                <p><strong>Mechanical Lead:</strong> Justin Wang<br>
+                <strong>Contributors:</strong> Mechanical team members</p>
+
+                <h3>References & Resources</h3>
+                <ul>
+                    <li>SUAS Competition Rules & Scoring: <a href="https://suas-competition.org" target="_blank" style="color: var(--primary-blue);">suas-competition.org</a></li>
+                    <li>Carbon Fiber Design Guidelines (CompositesWorld)</li>
+                    <li>UAV Design Principles (MIT OpenCourseWare)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="section-container">
+            <p>&copy; 2025 Spartan Flight | San José State University | Student Unmanned Aerial Systems Competition Team</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - Spartan Flight</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Member-specific styles */
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .member-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .member-card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            transform: translateY(-4px);
+        }
+
+        .member-image {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-gold));
+            border: 4px solid var(--accent-gold);
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .member-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+            font-weight: 800;
+        }
+
+        .member-role {
+            color: var(--accent-gold);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .member-link {
+            display: inline-block;
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .member-link:hover {
+            color: var(--accent-gold);
+        }
+
+        @media (max-width: 768px) {
+            .members-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">SPARTAN <span class="logo-accent">FLIGHT</span></a>
+            <nav>
+                <a href="index.html#about">About</a>
+                <a href="index.html#teams">Teams</a>
+                <a href="index.html#vehicle">Vehicle</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="index.html#blog">Blog</a>
+                <a href="index.html#sponsors">Sponsors</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <h1>Meet Our Team</h1>
+        <p>Dedicated students driving innovation in autonomous aerial systems at San José State University</p>
+    </section>
+
+    <section class="light">
+        <div class="section-container">
+            <h2>Team Leadership</h2>
+            <p class="section-intro" style="margin-left: auto; margin-right: auto;">Our team is led by passionate engineering students committed to pushing the boundaries of UAS technology.</p>
+
+            <div class="members-grid">
+                <div class="member-card">
+                    <div class="member-image">
+                        <img src="images/members/ben.jpg" alt="Ben Nguyen">
+                    </div>
+                    <h3>Ben Nguyen</h3>
+                    <p class="member-role">Chief Engineer & Electrical Lead</p>
+                    <a href="https://www.linkedin.com/in/benvn123/" target="_blank" class="member-link">LinkedIn →</a>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-image">
+                        <img src="images/members/andy.jpg" alt="Andy Van">
+                    </div>
+                    <h3>Andy Van</h3>
+                    <p class="member-role">Software Lead</p>
+                    <a href="https://www.linkedin.com/in/andy-van-029b1b243" target="_blank" class="member-link">LinkedIn →</a>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-image">
+                        <img src="images/members/justin.jpg" alt="Justin Wang">
+                    </div>
+                    <h3>Justin Wang</h3>
+                    <p class="member-role">Mechanical Lead</p>
+                    <a href="https://www.linkedin.com/in/justinwang450/" target="_blank" class="member-link">LinkedIn →</a>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-image">
+                        <img src="images/members/brando.jpg" alt="Brando Suarez">
+                    </div>
+                    <h3>Brando Suarez</h3>
+                    <p class="member-role">Business Lead</p>
+                    <a href="https://www.linkedin.com/in/brando-suarez-b7a21b31a/" target="_blank" class="member-link">LinkedIn →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="section-container">
+            <p>&copy; 2025 Spartan Flight | San José State University | Student Unmanned Aerial Systems Competition Team</p>
+        </div>
+    </footer>
+</body>
+</html>

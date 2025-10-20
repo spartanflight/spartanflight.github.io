@@ -2,9 +2,11 @@
 
 Official website for Spartan Flight - San José State University's Student Unmanned Aerial Systems (SUAS) Competition Team.
 
-## About
+## Theme
+Professional, clean design using SJSU blue (#003366) and gold (#FFB81C) colors. Single-page application with anchor navigation. Engineer-focused with technical depth.
 
-Spartan Flight is SJSU's premier unmanned aerial systems team, competing annually in the Student Unmanned Aerial Systems Competition. We are a multidisciplinary team building autonomous drones that push the boundaries of aerial robotics.
+## Project Template
+Use `/projects/project-template.html` as the base for creating detailed project documentation pages. It includes the approved hybrid format with visual specs and technical paragraphs.
 
 ## Team Leads
 
@@ -13,7 +15,7 @@ Spartan Flight is SJSU's premier unmanned aerial systems team, competing annuall
 - **Mechanical Lead:** Justin Wang
 - **Business Lead:** Brando Suarez
 
-### Local Deployment (testing)
+## Local Deployment (testing)
 ```bash
 python3 -m http.server 8000
 ```
