@@ -52,20 +52,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
-hamburger.addEventListener('click', () => {
-    const isExpanded = navMenu.classList.toggle('active');
-    hamburger.classList.toggle('active');
-    hamburger.setAttribute('aria-expanded', isExpanded);
-});
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        const isExpanded = navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', isExpanded);
+    });
 
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-        navMenu.classList.remove('active');
-        hamburger.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', 'false');
-    }
-});
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+            navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+        }
+    });
+}
 
 const navbar = document.querySelector('.navbar');
 let lastScroll = 0;

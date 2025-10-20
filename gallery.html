@@ -39,23 +39,38 @@
                 <li><a href="documentation.html" class="nav-link">Technical Docs</a></li>
                 <li><a href="blog.html" class="nav-link">Blog</a></li>
             </ul>
-            <div class="hamburger">
+            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
+    <!-- Coming Soon Page -->
+    <section class="section coming-soon-section" style="min-height: calc(100vh - 175px); display: flex; align-items: center; justify-content: center; padding: 80px 2rem 100px 2rem;">
         <div class="container">
-            <h1 class="page-title">Vehicle Gallery</h1>
-            <p class="page-subtitle">Our multicopter platform designed for the 2025 SUAS competition</p>
+            <div class="coming-soon-content" style="text-align: center; max-width: 700px; margin: 0 auto;">
+                <h1 class="section-title" style="font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1.5rem;">Coming Soon</h1>
+                <p style="font-size: 1.3rem; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.8;">
+                    We're currently building our competition vehicle! Once the final drone is completed, this page will showcase detailed photos, specifications, flight test videos, and build process documentation.
+                </p>
+                <p style="font-size: 1.1rem; color: var(--primary-color); font-weight: 600;">
+                    Check back soon for updates on our progress!
+                </p>
+            </div>
         </div>
     </section>
 
-    <!-- Vehicle Overview -->
+    <!-- TODO: VEHICLE GALLERY CONTENT - Uncomment when final drone is built and images are available -->
+    <!--
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Vehicle Gallery</h1>
+            <p class="page-subtitle">Our multicopter platform designed for the 2026 SUAS competition</p>
+        </div>
+    </section>
+
     <section class="section vehicle-overview">
         <div class="container">
             <h2 class="section-title">Competition UAV</h2>
@@ -65,7 +80,6 @@
         </div>
     </section>
 
-    <!-- Vehicle Photos -->
     <section class="section gallery-section">
         <div class="container">
             <h2 class="section-title">Vehicle Photos</h2>
@@ -98,7 +112,6 @@
         </div>
     </section>
 
-    <!-- Flight Testing -->
     <section class="section testing-section">
         <div class="container">
             <h2 class="section-title">Flight Testing</h2>
@@ -123,7 +136,6 @@
         </div>
     </section>
 
-    <!-- Videos Section -->
     <section class="section videos-section">
         <div class="container">
             <h2 class="section-title">Flight Videos</h2>
@@ -131,22 +143,19 @@
                 <div class="video-item">
                     <div class="video-placeholder">
                         <p>Flight Test Video 1</p>
-                        <!-- Replace with actual video embed -->
-                        <!-- <iframe src="youtube-link" frameborder="0" allowfullscreen></iframe> -->
+                        <iframe src="youtube-link" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <p class="video-caption">Autonomous flight demonstration</p>
                 </div>
                 <div class="video-item">
                     <div class="video-placeholder">
                         <p>Flight Test Video 2</p>
-                        <!-- Replace with actual video embed -->
                     </div>
                     <p class="video-caption">Object detection in action</p>
                 </div>
                 <div class="video-item">
                     <div class="video-placeholder">
                         <p>Flight Test Video 3</p>
-                        <!-- Replace with actual video embed -->
                     </div>
                     <p class="video-caption">Payload delivery test</p>
                 </div>
@@ -154,7 +163,6 @@
         </div>
     </section>
 
-    <!-- Build Process -->
     <section class="section build-section">
         <div class="container">
             <h2 class="section-title">Build Process</h2>
@@ -186,11 +194,12 @@
             </div>
         </div>
     </section>
+    -->
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Spartan Flight - San José State University</p>
+            <p>&copy; 2026 Spartan Flight - San José State University</p>
             <p>Competing in the Student Unmanned Aerial Systems Competition</p>
         </div>
     </footer>
