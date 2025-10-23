@@ -13,7 +13,7 @@ Use `/projects/project-template.html` as the base for creating detailed project 
 - **Chief Engineer & Electrical Lead:** Ben Nguyen
 - **Software Lead:** Andy Van
 - **Mechanical Lead:** Justin Wang
-- **Business Lead:** Brando Suarez
+- **Business Lead:** Ethan Onyett
 
 ## Local Deployment (testing)
 ```bash
