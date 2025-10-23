@@ -472,7 +472,7 @@
 
         /* Sponsor Logo Collage */
         .sponsor-logos {
-            max-width: 900px;
+            display: inline-block;
             margin: 2rem auto;
             padding: 2rem;
             background: rgba(255, 255, 255, 0.95);
@@ -489,6 +489,7 @@
         }
 
         .sponsor-logos img {
+            max-width: 900px;
             width: 100%;
             height: auto;
             display: block;
@@ -897,9 +898,11 @@
             <p style="margin-bottom: 0; font-size: 1rem;">Learn more about sponsorship tiers and benefits</p>
             <a href="sponsorship.html" class="section-link" style="color: var(--accent-gold); margin-bottom: 0; margin-top: 0; display: inline-flex;">Read our sponsorship packet</a>
 
-            <div class="sponsor-logos">
-                <h3>Our Valued Sponsors</h3>
-                <img src="images/sponsors-collage.png" alt="Spartan Flight Sponsors">
+            <div style="text-align: center;">
+                <div class="sponsor-logos">
+                    <h3>Our Valued Sponsors</h3>
+                    <img src="images/sponsors-collage.png" alt="Spartan Flight Sponsors">
+                </div>
             </div>
 
             <p style="margin-top: 2rem; font-size: 1rem;">Ready to support the next generation of UAS engineers?</p>
