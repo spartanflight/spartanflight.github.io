@@ -3,8 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Spartan Flight is SJSU's premier UAS competition team designing, building, and flying autonomous aerial systems.">
     <title>Spartan Flight - SJSU UAS Competition Team</title>
     <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+    <meta name="theme-color" content="#003366">
+    <link rel="canonical" href="https://spartanflightssjsu.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Spartan Flight - SJSU UAS Competition Team">
+    <meta property="og:description" content="Spartan Flight is SJSU's premier UAS competition team designing, building, and flying autonomous aerial systems.">
+    <meta property="og:url" content="https://spartanflightssjsu.com/">
+    <meta property="og:image" content="https://spartanflightssjsu.com/images/sponsors-collage.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Spartan Flight - SJSU UAS Competition Team">
+    <meta name="twitter:description" content="Spartan Flight is SJSU's premier UAS competition team designing, building, and flying autonomous aerial systems.">
+    <meta name="twitter:image" content="https://spartanflightssjsu.com/images/sponsors-collage.png">
     <style>
         * {
             margin: 0;
@@ -54,6 +66,7 @@
             display: flex;
             align-items: center;
             gap: 0.75rem;
+            text-decoration: none;
         }
 
         .logo img {
@@ -85,6 +98,70 @@
             color: var(--accent-gold);
         }
 
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+            padding: 0.5rem;
+            z-index: 1001;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-blue);
+            transition: all 0.3s;
+            border-radius: 2px;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 73px;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+            padding: 1rem 0;
+            max-height: calc(100vh - 73px);
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 1rem 2rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: background 0.2s;
+        }
+
+        .mobile-menu a:hover,
+        .mobile-menu a:active {
+            background: var(--light-gray);
+            color: var(--accent-gold);
+        }
+
         /* Hero Carousel */
         .hero {
             position: relative;
@@ -104,6 +181,29 @@
             align-items: center;
             justify-content: center;
             pointer-events: none;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #004d7a 100%);
+        }
+
+        /* Light variant for hero slides on white */
+        .carousel-slide.light {
+            background: var(--white);
+        }
+
+        .carousel-slide.light .hero-content {
+            color: var(--primary-blue);
+        }
+
+        .carousel-slide.light .btn-secondary {
+            color: var(--primary-blue);
+            border-color: var(--primary-blue);
+        }
+
+        .carousel-slide.light .btn-secondary:hover {
+            background: var(--primary-blue);
+            color: var(--white);
         }
 
         .carousel-slide.active {
@@ -111,17 +211,7 @@
             pointer-events: auto;
         }
 
-        .carousel-slide:nth-child(1) {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, #004d7a 100%);
-        }
-
-        .carousel-slide:nth-child(2) {
-            background: linear-gradient(135deg, #004d7a 0%, var(--primary-blue) 100%);
-        }
-
-        .carousel-slide:nth-child(3) {
-            background: linear-gradient(135deg, #1a2d5c 0%, #003366 100%);
-        }
+        
 
         .hero-content {
             color: var(--white);
@@ -130,7 +220,7 @@
             padding: 2rem;
         }
 
-        .hero h1 {
+        .hero h1, .hero h2 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
             font-weight: 900;
@@ -220,6 +310,7 @@
         /* Content Sections */
         section {
             padding: 4rem 2rem;
+            scroll-margin-top: 90px;
         }
 
         section.light {
@@ -472,12 +563,42 @@
 
         /* Sponsor Logo Collage */
         .sponsor-logos {
-            display: inline-block;
-            margin: 2rem auto;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            width: 100vw;
+            padding: 3rem calc(50vw - 50%);
+            background: var(--white);
+            border-radius: 0;
+        }
+
+        .logos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            align-items: center;
+            justify-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .logos-grid a {
+            display: block;
+            transition: transform 0.2s ease;
+        }
+
+        .logos-grid a:hover {
+            transform: translateY(-2px);
+        }
+
+        .logos-grid img {
+            height: 60px;
+            max-width: 180px;
+            width: auto;
+            object-fit: contain;
+            display: block;
         }
 
         .sponsor-logos h3 {
@@ -486,14 +607,6 @@
             margin-bottom: 1.5rem;
             font-size: 1.5rem;
             font-weight: 800;
-        }
-
-        .sponsor-logos img {
-            max-width: 900px;
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 4px;
         }
 
         .sponsor-logos-placeholder {
@@ -514,7 +627,7 @@
             background: linear-gradient(135deg, var(--primary-blue) 0%, #004d7a 100%);
             color: var(--white);
             text-align: center;
-            padding: 4rem 2rem;
+            padding: 5rem 2rem;
         }
 
         .sponsor-section h2 {
@@ -531,33 +644,73 @@
             margin-right: auto;
         }
 
-        .sponsor-benefits {
+        .sponsor-benefits-list {
+            list-style: none;
+            max-width: 900px;
+            margin: 1.25rem auto 1.5rem;
+            padding: 0;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 0.75rem 1.25rem;
         }
 
-        .sponsor-benefit {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1.5rem;
-            border-radius: 6px;
+        .sponsor-benefits-list li {
+            position: relative;
+            padding: 1.25rem 1.25rem 1.25rem 2.5rem;
+            color: var(--white);
+            opacity: 0.95;
+            background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 184, 28, 0.3);
+            border-radius: 6px;
+            text-align: left;
         }
 
-        .sponsor-benefit h4 {
+        .sponsor-benefits-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 1rem;
+            top: 1.25rem;
             color: var(--accent-gold);
-            margin-bottom: 0.5rem;
+            font-weight: 900;
             font-size: 1.1rem;
         }
 
-        .sponsor-benefit p {
-            font-size: 0.9rem;
-            margin: 0;
+        .sponsor-benefit-title {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            display: block;
         }
+
+        .sponsor-benefit-desc {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .sponsor-kpis {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            max-width: 900px;
+            margin: 1rem auto 1.5rem;
+        }
+
+        .sponsor-kpis .kpi { text-align: center; }
+
+        .kpi-number {
+            color: var(--accent-gold);
+            font-weight: 900;
+            font-size: 1.8rem;
+            margin-bottom: 0.15rem;
+        }
+
+        .kpi-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        
 
         /* CTA Banner */
         .cta-banner {
@@ -599,49 +752,165 @@
                 display: none;
             }
 
-            .hero {
-                height: 400px;
-                margin-top: 50px;
+            .mobile-menu-toggle {
+                display: flex;
             }
 
-            .hero h1 {
-                font-size: 2.2rem;
+            header {
+                padding: 1rem 0;
+            }
+
+            .hero {
+                height: 450px;
+                margin-top: 0;
+            }
+
+            .hero h1, .hero h2 {
+                font-size: 2rem;
             }
 
             .hero .tagline {
-                font-size: 1.1rem;
+                font-size: 1rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+                margin-bottom: 1.5rem;
             }
 
             .cta-group {
                 flex-direction: column;
+                gap: 0.75rem;
             }
 
             .btn {
                 width: 100%;
+                padding: 0.85rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            section {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .section-container {
+                padding: 0;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .section-intro {
+                font-size: 0.95rem;
+                margin-bottom: 1.5rem;
             }
 
             .two-column {
                 grid-template-columns: 1fr;
+                gap: 2rem;
             }
 
             .about-content {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-text h3 {
+                font-size: 1.5rem;
+            }
+
+            .image-carousel {
+                height: 250px;
             }
 
             .cards-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
 
-            h2 {
-                font-size: 1.8rem;
+            .card {
+                padding: 1.5rem;
             }
 
-            .image-carousel {
-                height: 300px;
+            .card h3 {
+                font-size: 1.2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .stat-label {
+                font-size: 0.8rem;
+            }
+
+            .sponsor-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .sponsor-benefits-list {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+                margin: 1.5rem auto;
+            }
+
+            .sponsor-benefits-list li {
+                padding: 1rem 1rem 1rem 2.25rem;
+            }
+
+            .sponsor-kpis {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.75rem;
+                margin: 1.5rem auto;
+            }
+
+            .kpi-number {
+                font-size: 1.5rem;
+            }
+
+            .kpi-label {
+                font-size: 0.8rem;
+            }
+
+            .logos-grid {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .logos-grid img {
+                height: 45px;
+                max-width: 140px;
+            }
+
+            .sponsor-logos {
+                padding: 2rem 1.5rem;
+            }
+
+            .page-header {
+                padding: 4rem 1.5rem 3rem;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .page-header p {
+                font-size: 1.1rem;
             }
 
             .sponsor-benefits {
                 grid-template-columns: 1fr;
+            }
+
+            .nav-container {
+                padding: 0 1.5rem;
             }
         }
     </style>
@@ -649,10 +918,10 @@
 <body>
     <header>
         <div class="nav-container">
-            <div class="logo">
+            <a href="index.html" class="logo">
                 <img src="images/logo.jpg" alt="Spartan Flight Logo">
                 <div class="logo-text">SPARTAN <span class="logo-accent">FLIGHT</span></div>
-            </div>
+            </a>
             <nav>
                 <a href="#about">About</a>
                 <a href="#teams">Teams</a>
@@ -662,7 +931,21 @@
                 <a href="#sponsors">Sponsors</a>
                 <a href="#contact">Contact</a>
             </nav>
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
+        <nav class="mobile-menu" id="mobileMenu">
+            <a href="#about">About</a>
+            <a href="#teams">Teams</a>
+            <a href="#vehicle">Vehicle</a>
+            <a href="#projects">Projects</a>
+            <a href="#blog">Blog</a>
+            <a href="#sponsors">Sponsors</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
 
     <section class="hero">
@@ -677,9 +960,9 @@
                 </div>
             </div>
         </div>
-        <div class="carousel-slide">
+        <div class="carousel-slide light">
             <div class="hero-content">
-                <h1>INNOVATE</h1>
+                <h2>INNOVATE</h2>
                 <div class="tagline">Engineering Next-Generation UAS</div>
                 <p>From custom quadcopter design to autonomous flight algorithms, our multidisciplinary team tackles the full spectrum of aerial robotics.</p>
                 <div class="cta-group">
@@ -688,14 +971,14 @@
                 </div>
             </div>
         </div>
-        <div class="carousel-slide">
+        <div class="carousel-slide light">
             <div class="hero-content">
-                <h1>COMPETE</h1>
-                <div class="tagline">SUAS Competition Champions</div>
-                <p>We compete annually in the Student Unmanned Aerial Systems Competition against 70+ international teams.</p>
+                <h2>SPONSOR</h2>
+                <div class="tagline">Partner with Spartan Flight</div>
+                <p>Elevate your brand while supporting hands-on engineering education. Sponsors receive visible placement and direct access to top SJSU talent.</p>
                 <div class="cta-group">
-                    <a href="#sponsors" class="btn btn-primary">Become a Sponsor</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Us</a>
+                    <a href="sponsorship.html" class="btn btn-primary">Sponsorship Packet</a>
+                    <a href="mailto:spartanflightsjsu@gmail.com?subject=Sponsorship%20Inquiry" class="btn btn-secondary">Email Us</a>
                 </div>
             </div>
         </div>
@@ -734,14 +1017,12 @@
                     <div class="carousel-image" style="background-image: url('images/team-3.jpg');"></div>
                     <div class="carousel-image" style="background-image: url('images/team-4.jpg');"></div>
                     <div class="carousel-image" style="background-image: url('images/team-5.jpg');"></div>
-                    <div class="carousel-image" style="background-image: url('images/team-6.jpg');"></div>
                     <div class="image-carousel-controls">
                         <div class="image-dot active" onclick="currentImageSlide(0)"></div>
                         <div class="image-dot" onclick="currentImageSlide(1)"></div>
                         <div class="image-dot" onclick="currentImageSlide(2)"></div>
                         <div class="image-dot" onclick="currentImageSlide(3)"></div>
                         <div class="image-dot" onclick="currentImageSlide(4)"></div>
-                        <div class="image-dot" onclick="currentImageSlide(5)"></div>
                     </div>
                 </div>
             </div>
@@ -876,39 +1157,42 @@
     <section class="sponsor-section" id="sponsors">
         <div class="section-container">
             <h2>Sponsorship Opportunities</h2>
-            <p>Spartan Flight is currently seeking sponsors to support our mission of advancing autonomous aerial systems and competing at the highest levels of collegiate UAS engineering.</p>
+            <p class="sponsor-sub" style="font-size: 1.05rem; opacity: 0.95; margin-bottom: 1rem;">Amplify your brand, inspire engineers, and recruit top SJSU talent.</p>
             
-            <div class="sponsor-benefits">
-                <div class="sponsor-benefit">
-                    <h4>Brand Visibility</h4>
-                    <p>Your company logo featured prominently on our website, materials, and aircraft.</p>
-                </div>
-                <div class="sponsor-benefit">
-                    <h4>Innovation Partnership</h4>
-                    <p>Collaborate with talented engineers and tech-forward students.</p>
-                </div>
-                <div class="sponsor-benefit">
-                    <h4>Competition Support</h4>
-                    <p>Help us compete against 70+ international teams at SUAS competition.</p>
-                </div>
-                <div class="sponsor-benefit">
-                    <h4>Talent Pipeline</h4>
-                    <p>Connect with top engineering talent for internships and recruitment.</p>
-                </div>
+            <ul class="sponsor-benefits-list">
+                <li>
+                    <span class="sponsor-benefit-title">Logo Visibility</span>
+                    <span class="sponsor-benefit-desc">Your company logo featured prominently our website, t-shirts, and social media.</span>
+                </li>
+                <li>
+                    <span class="sponsor-benefit-title">Monthly Newsletter</span>
+                    <span class="sponsor-benefit-desc">Stay connected with our progress through detailed monthly updates. </span>
+                </li>
+                <li>
+                    <span class="sponsor-benefit-title">More</span>
+                    <span class="sponsor-benefit-desc">Additional benefits including engagement opportunities and showcase at competition events. </span>
+                </li>
+            </ul>
+
+            <div class="sponsor-kpis">
+                <div class="kpi"><div class="kpi-number">20</div><div class="kpi-label">Active Members</div></div>
+                <div class="kpi"><div class="kpi-number">2</div><div class="kpi-label">Major Competitions</div></div>
+                <div class="kpi"><div class="kpi-number">—</div><div class="kpi-label">More</div></div>
             </div>
 
-            <p style="margin-bottom: 0; font-size: 1rem;">Learn more about sponsorship tiers and benefits</p>
-            <a href="sponsorship.html" class="section-link" style="color: var(--accent-gold); margin-bottom: 0; margin-top: 0; display: inline-flex;">Read our sponsorship packet</a>
-
-            <div style="text-align: center;">
-                <div class="sponsor-logos">
-                    <h3>Our Valued Sponsors</h3>
-                    <img src="images/sponsors-collage.png" alt="Spartan Flight Sponsors">
-                </div>
+            <div class="cta-group" style="margin-top: 1rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                <a href="sponsorship.html" class="btn btn-primary">Become a Sponsor</a>
+                <a href="sponsorship.html" class="btn btn-secondary" style="border-color: var(--white); color: var(--white);">Sponsor Packet</a>
             </div>
+        </div>
 
-            <p style="margin-top: 2rem; font-size: 1rem;">Ready to support the next generation of UAS engineers?</p>
-            <a href="mailto:spartanflightsjsu@gmail.com?subject=Sponsorship%20Inquiry" class="btn btn-primary">Become a Sponsor</a>
+        <div class="sponsor-logos" style="margin-top: 2rem;">
+            <h3 style="color: var(--primary-blue); text-align: center; margin-bottom: 1rem;">Our Valued Sponsors</h3>
+            <div class="logos-grid">
+                <a href="#" style="display: block;"><img src="images/sponsors-collage.png" alt="Sponsors collage" loading="lazy"></a>
+                <a href="#" style="display: block;"><img src="images/sponsor_astral.png" alt="Astral" loading="lazy"></a>
+                <a href="#" style="display: block;"><img src="images/sponsor_stencilease.jpg" alt="Stencilease" loading="lazy"></a>
+            </div>
         </div>
     </section>
 
@@ -1019,10 +1303,48 @@
         // Auto-advance vehicle carousel every 4 seconds
         setInterval(nextVehicleSlide, 4000);
 
+        // Enable optional background images on hero slides via data-bg attribute
+        (function initHeroBackgrounds() {
+            const slides = document.querySelectorAll('.hero .carousel-slide');
+            slides.forEach(slide => {
+                const bg = slide.getAttribute('data-bg');
+                if (bg) {
+                    slide.style.backgroundImage = `url('${bg}')`;
+                }
+            });
+        })();
+
         // Initialize
         showHeroSlide(0);
         showImageSlide(0);
         showVehicleSlide(0);
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuToggle.addEventListener('click', function() {
+            mobileMenuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInside = mobileMenu.contains(event.target) || mobileMenuToggle.contains(event.target);
+            if (!isClickInside && mobileMenu.classList.contains('active')) {
+                mobileMenuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+        });
     </script>
 </body>
 </html>
