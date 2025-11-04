@@ -184,26 +184,10 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+        }
+
+        .hero .carousel-slide {
             background: linear-gradient(135deg, var(--primary-blue) 0%, #004d7a 100%);
-        }
-
-        /* Light variant for hero slides on white */
-        .carousel-slide.light {
-            background: var(--white);
-        }
-
-        .carousel-slide.light .hero-content {
-            color: var(--primary-blue);
-        }
-
-        .carousel-slide.light .btn-secondary {
-            color: var(--primary-blue);
-            border-color: var(--primary-blue);
-        }
-
-        .carousel-slide.light .btn-secondary:hover {
-            background: var(--primary-blue);
-            color: var(--white);
         }
 
         .carousel-slide.active {
@@ -960,9 +944,9 @@
                 </div>
             </div>
         </div>
-        <div class="carousel-slide light">
+        <div class="carousel-slide">
             <div class="hero-content">
-                <h2>INNOVATE</h2>
+                <h1>INNOVATE</h1>
                 <div class="tagline">Engineering Next-Generation UAS</div>
                 <p>From custom quadcopter design to autonomous flight algorithms, our multidisciplinary team tackles the full spectrum of aerial robotics.</p>
                 <div class="cta-group">
@@ -971,9 +955,9 @@
                 </div>
             </div>
         </div>
-        <div class="carousel-slide light">
+        <div class="carousel-slide">
             <div class="hero-content">
-                <h2>SPONSOR</h2>
+                <h1>SPONSOR</h1>
                 <div class="tagline">Partner with Spartan Flight</div>
                 <p>Elevate your brand while supporting hands-on engineering education. Sponsors receive visible placement and direct access to top SJSU talent.</p>
                 <div class="cta-group">
@@ -997,6 +981,10 @@
                     <p>Spartan Flight is San José State University's student-run unmanned aerial systems team. We compete annually in the Student Unmanned Aerial Systems (SUAS) Competition against 70+ international teams. Building a complete autonomous system is as much an engineering challenge as it is a financial one.</p>
                     
                     <div class="stats-grid">
+                        <div class="stat">
+                            <div class="stat-number">40+</div>
+                            <div class="stat-label">Members</div>
+                        </div>
                         <div class="stat">
                             <div class="stat-number">4</div>
                             <div class="stat-label">Core Teams</div>
@@ -1032,8 +1020,8 @@
     <section class="white" id="teams">
         <div class="section-container">
             <h2>Our Teams</h2>
-            <p class="section-intro">Members participate in one of four distinct subteams, each bringing specialized expertise to our mission.</p>
-            
+            <p class="section-intro">40+ members participate in one of four distinct subteams, each bringing specialized expertise to our mission.</p>
+
             <div class="cards-grid">
                 <div class="card">
                     <h3>Mechanical</h3>
@@ -1174,19 +1162,13 @@
                 </li>
             </ul>
 
-            <div class="sponsor-kpis">
-                <div class="kpi"><div class="kpi-number">20</div><div class="kpi-label">Active Members</div></div>
-                <div class="kpi"><div class="kpi-number">2</div><div class="kpi-label">Major Competitions</div></div>
-                <div class="kpi"><div class="kpi-number">—</div><div class="kpi-label">More</div></div>
-            </div>
-
-            <div class="cta-group" style="margin-top: 1rem; max-width: 700px; margin-left: auto; margin-right: auto;">
-                <a href="sponsorship.html" class="btn btn-primary">Become a Sponsor</a>
+            <div class="cta-group" style="margin-top: 1.5rem; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                <a href="mailto:spartanflightsjsu@gmail.com?subject=Sponsorship%20Inquiry" class="btn btn-primary">Become a Sponsor</a>
                 <a href="sponsorship.html" class="btn btn-secondary" style="border-color: var(--white); color: var(--white);">Sponsor Packet</a>
             </div>
         </div>
 
-        <div class="sponsor-logos" style="margin-top: 2rem;">
+        <div class="sponsor-logos" style="margin-top: 0;">
             <h3 style="color: var(--primary-blue); text-align: center; margin-bottom: 1rem;">Our Valued Sponsors</h3>
             <div class="logos-grid">
                 <a href="#" style="display: block;"><img src="images/sponsors-collage.png" alt="Sponsors collage" loading="lazy"></a>
