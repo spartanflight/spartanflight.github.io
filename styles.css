@@ -65,6 +65,15 @@ header {
     color: var(--accent-gold);
 }
 
+.logo-subtitle {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--text-light);
+    letter-spacing: 0.3px;
+    line-height: 1.2;
+    margin-top: 2px;
+}
+
 nav a {
     color: var(--text-dark);
     text-decoration: none;
@@ -331,19 +340,66 @@ h2 {
 footer {
     background: var(--text-dark);
     color: var(--white);
-    text-align: center;
-    padding: 2rem;
-    font-size: 0.9rem;
+    padding: 2rem 2rem 1.5rem;
+    font-size: 0.85rem;
 }
 
 footer a {
-    color: var(--white);
+    color: rgba(255, 255, 255, 0.75);
     text-decoration: none;
     transition: color 0.3s;
 }
 
 footer a:hover {
     color: var(--accent-gold) !important;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-section h4 {
+    color: var(--white);
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.4rem;
+}
+
+.footer-section ul li a {
+    font-size: 0.85rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.5;
+}
+
+.footer-bottom strong {
+    color: var(--white);
+    font-weight: 700;
 }
 
 /* Responsive */
@@ -383,5 +439,20 @@ footer a:hover {
 
     h2 {
         font-size: 1.8rem;
+    }
+
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        text-align: center;
+    }
+
+    .footer-section h4 {
+        font-size: 0.8rem;
+        margin-bottom: 0.6rem;
+    }
+
+    footer {
+        padding: 1.5rem 1.5rem 1rem;
     }
 }

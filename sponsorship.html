@@ -1,44 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F1SCGSS72R"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-F1SCGSS72R');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sponsorship Packet - Spartan Flight</title>
-    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="styles.css">
     <style>
-        .coming-soon-section {
-            min-height: calc(100vh - 300px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 80px 2rem 100px 2rem;
-        }
-
-        .coming-soon-content {
-            text-align: center;
-            max-width: 700px;
+        .pdf-viewer-container {
+            width: 100%;
+            max-width: 1000px;
             margin: 0 auto;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            background: var(--white);
+            min-height: 1200px;
         }
 
-        .coming-soon-content h2 {
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            margin-bottom: 1.5rem;
-            color: var(--primary-blue);
-            font-weight: 900;
+        .pdf-viewer-container iframe {
+            width: 100%;
+            height: 1200px;
+            border: none;
+            display: block;
         }
 
-        .coming-soon-content p {
-            font-size: 1.2rem;
+        @media (max-width: 768px) {
+            .pdf-viewer-container {
+                min-height: 900px;
+            }
+
+            .pdf-viewer-container iframe {
+                height: 900px;
+            }
+        }
+
+        .pdf-download-btn {
+            text-align: center;
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .pdf-contact-text {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
             color: var(--text-light);
-            margin-bottom: 2rem;
-            line-height: 1.8;
+            line-height: 1.6;
         }
 
-        .coming-soon-content p:last-of-type {
-            font-size: 1.1rem;
-            color: var(--accent-gold);
+        .pdf-contact-text a {
+            color: var(--primary-blue);
+            text-decoration: none;
             font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .pdf-contact-text a:hover {
+            color: var(--accent-gold);
+        }
+
+        @media (max-width: 768px) {
+            .pdf-viewer-container {
+                min-height: 900px;
+            }
+
+            .pdf-viewer-container iframe {
+                height: 900px;
+            }
+
+            .pdf-download-btn {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .pdf-download-btn .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+        .pdf-download-btn .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 51, 102, 0.3);
+        }
         }
     </style>
 </head>
@@ -46,8 +101,11 @@
     <header>
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <img src="images/logo.jpg" alt="Spartan Flight Logo">
-                <div class="logo-text">SPARTAN <span class="logo-accent">FLIGHT</span></div>
+                <img src="images/logo.jpg" alt="Spartan Flight Logo" width="50" height="50" loading="eager" fetchpriority="high">
+                <div>
+                    <div class="logo-text">SPARTAN <span class="logo-accent">FLIGHT</span></div>
+                    <div class="logo-subtitle">San Jose State University's<br>First Drone Competition Team</div>
+                </div>
             </a>
             <nav>
                 <a href="index.html#about">About</a>
@@ -63,26 +121,75 @@
 
     <section class="page-header">
         <h1>Sponsorship Packet</h1>
-        <p>Partner with Spartan Flight to support the next generation of aerospace engineers</p>
     </section>
 
-    <section class="white coming-soon-section">
+    <section class="white">
         <div class="section-container">
-            <div class="coming-soon-content">
-                <h2>Coming Soon</h2>
-                <p>
-                    We're currently finalizing our sponsorship packet with detailed information about partnership opportunities, sponsorship tiers, and benefits.
-                </p>
-                <p>
-                    For immediate sponsorship inquiries, please contact us at <a href="mailto:spartanflightsjsu@gmail.com" style="color: var(--accent-gold); text-decoration: none; font-weight: 700;">spartanflightsjsu@gmail.com</a>
-                </p>
+            <div class="pdf-viewer-container">
+                <iframe id="pdfViewer" src="sponsorship-packet.pdf#view=FitH&page=1" type="application/pdf" title="Sponsorship Packet PDF"></iframe>
             </div>
+            <div class="pdf-download-btn">
+                <a href="sponsorship-packet.pdf" download class="btn btn-primary">Download PDF</a>
+                <a href="sponsors.html" class="btn btn-primary" style="background: var(--primary-blue); color: var(--white); border: 2px solid var(--primary-blue);">View our Sponsors</a>
+            </div>
+            <p class="pdf-contact-text">Want to work with us or have other questions? <a href="mailto:spartanflightsjsu@gmail.com">Email us here</a>.</p>
         </div>
     </section>
+    <script>
+        // Detect mobile and adjust PDF view accordingly
+        function adjustPdfView() {
+            const pdfViewer = document.getElementById('pdfViewer');
+            if (window.innerWidth <= 768) {
+                // Mobile: show 1 page, fit to width
+                pdfViewer.src = 'sponsorship-packet.pdf#view=FitH&page=1';
+            } else {
+                // Desktop: show first 2 pages, fit to width
+                pdfViewer.src = 'sponsorship-packet.pdf#view=FitH&pages=1-2';
+            }
+        }
+        
+        // Adjust on load and resize
+        adjustPdfView();
+        window.addEventListener('resize', adjustPdfView);
+    </script>
 
     <footer>
-        <div class="section-container">
-            <p>&copy; 2025 Spartan Flight | San José State University | Student Unmanned Aerial Systems Competition Team</p>
+        <div class="footer-content">
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h4>Team</h4>
+                    <ul>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#teams">Teams</a></li>
+                        <li><a href="members.html">Members</a></li>
+                        <li><a href="index.html#vehicle">Vehicle</a></li>
+                        <li><a href="index.html#projects">Projects</a></li>
+                        <li><a href="index.html#blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Sponsors</h4>
+                    <ul>
+                        <li><a href="index.html#sponsors">Sponsorship Info</a></li>
+                        <li><a href="sponsorship.html">Become a Sponsor</a></li>
+                        <li><a href="sponsors.html">Our Sponsors</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Social Media</h4>
+                    <ul>
+                        <li><a href="mailto:spartanflightsjsu@gmail.com">Email</a></li>
+                        <li><a href="https://discord.gg/Rk3ajtUAeU" target="_blank" rel="noopener noreferrer">Discord</a></li>
+                        <li><a href="https://www.instagram.com/spartan.flight/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                        <li><a href="https://www.linkedin.com/company/spartan-flight" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                        <li><a href="https://linktr.ee/spartanflight" target="_blank" rel="noopener noreferrer">Linktree</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p><strong>Spartan Flight</strong> | <strong>San José State University</strong> | Student Unmanned Aerial Systems Competition Team</p>
+                <p style="margin-top: 0.5rem; font-size: 0.85rem;">&copy; 2025 All rights reserved</p>
+            </div>
         </div>
     </footer>
 </body>

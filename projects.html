@@ -1,18 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F1SCGSS72R"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-F1SCGSS72R');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Projects - Spartan Flight</title>
-    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .cta-banner {
+            background: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .cta-banner h2 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .cta-banner p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.95;
+        }
+
+        .cta-banner h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            font-weight: 700;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .contact-discord-btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            border-radius: 4px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            background: #5865F2;
+            color: var(--white);
+        }
+
+        .contact-discord-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(88, 101, 242, 0.4);
+            background: #4752C4;
+        }
+
+        .contact-calendar-btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            border-radius: 4px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .contact-calendar-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+            background: var(--white);
+            color: var(--primary-blue);
+        }
+
+        .contact-social-text {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .contact-social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .contact-social-link:hover {
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .contact-buttons {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .contact-discord-btn,
+            .contact-calendar-btn {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <img src="images/logo.jpg" alt="Spartan Flight Logo">
-                <div class="logo-text">SPARTAN <span class="logo-accent">FLIGHT</span></div>
+                <img src="images/logo.jpg" alt="Spartan Flight Logo" width="50" height="50" loading="eager" fetchpriority="high">
+                <div>
+                    <div class="logo-text">SPARTAN <span class="logo-accent">FLIGHT</span></div>
+                    <div class="logo-subtitle">San Jose State University's<br>First Drone Competition Team</div>
+                </div>
             </a>
             <nav>
                 <a href="index.html#about">About</a>
@@ -109,9 +241,66 @@
         </div>
     </section>
 
-    <footer>
+    <section class="cta-banner">
         <div class="section-container">
-            <p>&copy; 2025 Spartan Flight | San José State University | Student Unmanned Aerial Systems Competition Team</p>
+            <h2>Join Spartan Flight</h2>
+            <p>Building autonomous aerial systems requires collaborative expertise and resources. We're always looking for passionate engineers and sponsors to join our mission.</p>
+            <h3>Interested in Joining Spartan Flight?</h3>
+            <div class="contact-buttons">
+                <a href="https://discord.gg/Rk3ajtUAeU" target="_blank" rel="noopener noreferrer" class="contact-discord-btn">Find Us on Discord</a>
+                <a href="https://calendar.google.com/calendar/u/0?cid=c3BhcnRhbmZsaWdodHNqc3VAZ21haWwuY29t" target="_blank" rel="noopener noreferrer" class="contact-calendar-btn">See Our Calendar</a>
+            </div>
+            <p class="contact-social-text">Check out our other social media</p>
+            <div class="contact-social-links">
+                <a href="mailto:spartanflightsjsu@gmail.com" class="contact-social-link" aria-label="Email" title="Email">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/spartan.flight/" target="_blank" rel="noopener noreferrer" class="contact-social-link" aria-label="Instagram" title="Instagram">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/company/spartan-flight" target="_blank" rel="noopener noreferrer" class="contact-social-link" aria-label="LinkedIn" title="LinkedIn">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h4>Team</h4>
+                    <ul>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#teams">Teams</a></li>
+                        <li><a href="members.html">Members</a></li>
+                        <li><a href="index.html#vehicle">Vehicle</a></li>
+                        <li><a href="index.html#projects">Projects</a></li>
+                        <li><a href="index.html#blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Sponsors</h4>
+                    <ul>
+                        <li><a href="index.html#sponsors">Sponsorship Info</a></li>
+                        <li><a href="sponsorship.html">Become a Sponsor</a></li>
+                        <li><a href="sponsors.html">Our Sponsors</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Social Media</h4>
+                    <ul>
+                        <li><a href="mailto:spartanflightsjsu@gmail.com">Email</a></li>
+                        <li><a href="https://discord.gg/Rk3ajtUAeU" target="_blank" rel="noopener noreferrer">Discord</a></li>
+                        <li><a href="https://www.instagram.com/spartan.flight/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                        <li><a href="https://www.linkedin.com/company/spartan-flight" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p><strong>Spartan Flight</strong> | <strong>San José State University</strong> | Student Unmanned Aerial Systems Competition Team</p>
+                <p style="margin-top: 0.5rem; font-size: 0.85rem;">&copy; 2025 All rights reserved</p>
+            </div>
         </div>
     </footer>
 </body>
