@@ -85,8 +85,53 @@
                 <a href="blog.html">Blog</a>
                 <a href="contact.html">Contact Us</a>
             </nav>
+            <div class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
+        <nav class="mobile-menu" id="mobileMenu">
+            <a href="index.html">Home</a>
+            <a href="sponsors.html">Sponsors</a>
+            <a href="projects.html">Projects</a>
+            <a href="members.html">Members</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
     </header>
+    <script>
+        // Mobile menu toggle
+        (function() {
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            if (mobileMenuToggle && mobileMenu) {
+                mobileMenuToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    mobileMenuToggle.classList.toggle('active');
+                    mobileMenu.classList.toggle('active');
+                });
+
+                const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+                mobileMenuLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenuToggle.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                    });
+                });
+
+                document.addEventListener('click', function(event) {
+                    const isClickInside = mobileMenu.contains(event.target) || 
+                                         mobileMenuToggle.contains(event.target);
+                    if (!isClickInside && mobileMenu.classList.contains('active')) {
+                        mobileMenuToggle.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                    }
+                });
+            }
+        })();
+    </script>
 
     <section class="page-header">
         <h1>Vehicle Gallery</h1>

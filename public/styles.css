@@ -30,7 +30,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
 
 .nav-container {
@@ -87,6 +87,71 @@ nav a:hover {
     color: var(--accent-gold);
 }
 
+/* Mobile Menu */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+    padding: 0.5rem;
+    z-index: 1001;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--primary-blue);
+    transition: all 0.3s;
+    border-radius: 2px;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 73px;
+    left: 0;
+    width: 100%;
+    background: var(--white);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 1000;
+    padding: 1rem 0;
+    max-height: calc(100vh - 73px);
+    overflow-y: auto;
+}
+
+.mobile-menu.active {
+    display: block;
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 1rem 2rem;
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    transition: background 0.2s;
+}
+
+.mobile-menu a:hover,
+.mobile-menu a:active {
+    background: var(--light-gray);
+    color: var(--accent-gold);
+}
+
 /* Contact Page */
 .contact-section {
     background: var(--light-gray);
@@ -106,7 +171,7 @@ nav a:hover {
 .contact-info-card {
     background: var(--white);
     padding: 2.5rem;
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(0, 51, 102, 0.08);
 }
@@ -154,7 +219,7 @@ nav a:hover {
 .form-group select,
 .form-group textarea {
     padding: 0.85rem 1rem;
-    border-radius: 6px;
+    border-radius: 8px;
     border: 1px solid rgba(0, 51, 102, 0.2);
     font-size: 0.95rem;
     transition: border 0.2s, box-shadow 0.2s;
@@ -192,7 +257,7 @@ nav a:hover {
     background: rgba(0, 51, 102, 0.05);
     color: var(--primary-blue);
     padding: 0.75rem 1rem;
-    border-radius: 6px;
+    border-radius: 8px;
     font-weight: 700;
 }
 
@@ -379,17 +444,24 @@ h2 {
     gap: 2rem;
 }
 
+/* Teams section - 4 columns on desktop */
+#teams .cards-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
 .card {
     background: var(--white);
     padding: 2rem;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    transition: all 0.3s;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 51, 102, 0.05);
 }
 
 .card:hover {
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    transform: translateY(-3px);
+    border-color: rgba(0, 51, 102, 0.1);
 }
 
 .card h3 {
@@ -408,7 +480,7 @@ h2 {
 /* Buttons */
 .btn {
     padding: 0.9rem 2rem;
-    border-radius: 4px;
+    border-radius: 8px;
     font-weight: 700;
     text-decoration: none;
     transition: all 0.3s;
@@ -426,7 +498,7 @@ h2 {
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 184, 28, 0.3);
+    box-shadow: 0 6px 16px rgba(255, 184, 28, 0.35);
 }
 
 .btn-secondary {
@@ -506,7 +578,7 @@ h2 {
 .timeline-content {
     background: var(--white);
     padding: 2rem;
-    border-radius: 6px;
+    border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     position: relative;
 }
@@ -535,7 +607,7 @@ h2 {
     height: 250px;
     object-fit: cover;
     object-position: center;
-    border-radius: 6px;
+    border-radius: 10px;
     margin: 1rem 0;
     background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
     display: block;
@@ -639,6 +711,10 @@ footer a:hover {
         display: none;
     }
 
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
     .contact-section {
         padding: 3rem 1.5rem;
     }
@@ -679,6 +755,10 @@ footer a:hover {
         grid-template-columns: 1fr;
     }
 
+    #teams .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .timeline::before {
         left: 0;
     }
@@ -702,16 +782,48 @@ footer a:hover {
 
     .footer-links {
         grid-template-columns: 1fr;
-        gap: 1.25rem;
-        text-align: center;
+        gap: 1.5rem;
+        text-align: left;
+    }
+
+    .footer-section {
+        text-align: left;
     }
 
     .footer-section h4 {
-        font-size: 0.8rem;
-        margin-bottom: 0.6rem;
+        font-size: 0.85rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .footer-section ul {
+        padding-left: 0;
+    }
+
+    .footer-section ul li {
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-section ul li a {
+        font-size: 0.9rem;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        padding-top: 1.5rem;
+    }
+
+    .footer-bottom p {
+        font-size: 0.85rem;
+        line-height: 1.6;
     }
 
     footer {
-        padding: 1.5rem 1.5rem 1rem;
+        padding: 2rem 1.5rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #teams .cards-grid {
+        grid-template-columns: 1fr;
     }
 }
