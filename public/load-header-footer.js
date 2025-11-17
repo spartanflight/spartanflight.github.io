@@ -18,10 +18,17 @@
         }
 
         const basePath = getBasePath();
+        const isLocalFile = window.location.protocol === 'file:';
 
         // Load header
         const headerPlaceholder = document.getElementById('header-placeholder');
         if (headerPlaceholder) {
+            // For local file:// protocol, show a helpful message
+            if (isLocalFile) {
+                console.warn('Loading from file:// protocol. Header/footer loading requires HTTP server.');
+                console.warn('For local development, use: python -m http.server 8000 or npx serve');
+            }
+            
             fetch(basePath + 'header.html')
                 .then(response => {
                     if (!response.ok) throw new Error('Failed to load header');
@@ -33,8 +40,11 @@
                 })
                 .catch(err => {
                     console.error('Error loading header:', err);
-                    // Fallback: show error message
-                    headerPlaceholder.innerHTML = '<p style="padding: 1rem; color: red;">Error loading header. Please refresh the page.</p>';
+                    if (isLocalFile) {
+                        headerPlaceholder.innerHTML = '<div style="padding: 1rem; background: #fff3cd; border: 1px solid #ffc107; border-radius: 4px; margin: 1rem 0;"><p style="margin: 0; color: #856404;"><strong>Note:</strong> Header loading requires an HTTP server. For local development, run: <code>python -m http.server 8000</code> or <code>npx serve</code></p></div>';
+                    } else {
+                        headerPlaceholder.innerHTML = '<p style="padding: 1rem; color: red;">Error loading header. Please refresh the page.</p>';
+                    }
                 });
         }
 
@@ -51,8 +61,11 @@
                 })
                 .catch(err => {
                     console.error('Error loading footer:', err);
-                    // Fallback: show error message
-                    footerPlaceholder.innerHTML = '<p style="padding: 1rem; color: red;">Error loading footer. Please refresh the page.</p>';
+                    if (isLocalFile) {
+                        footerPlaceholder.innerHTML = '<div style="padding: 1rem; background: #fff3cd; border: 1px solid #ffc107; border-radius: 4px; margin: 1rem 0;"><p style="margin: 0; color: #856404;"><strong>Note:</strong> Footer loading requires an HTTP server. For local development, run: <code>python -m http.server 8000</code> or <code>npx serve</code></p></div>';
+                    } else {
+                        footerPlaceholder.innerHTML = '<p style="padding: 1rem; color: red;">Error loading footer. Please refresh the page.</p>';
+                    }
                 });
         }
     }
