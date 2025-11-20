@@ -30,7 +30,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container {
@@ -143,12 +143,12 @@ h2 {
     background: var(--white);
     padding: 2rem;
     border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     transition: all 0.3s;
 }
 
 .card:hover {
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
     transform: translateY(-2px);
 }
 
@@ -267,7 +267,7 @@ h2 {
     background: var(--white);
     padding: 2rem;
     border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     position: relative;
 }
 
@@ -383,5 +383,105 @@ footer a:hover {
 
     h2 {
         font-size: 1.8rem;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-blue: #4da6ff;
+        --accent-gold: #FFB81C;
+        --light-gray: #121212;
+        --white: #1e1e1e;
+        --text-dark: #e0e0e0;
+        --text-light: #aaaaaa;
+    }
+
+    /* Keep headers and hero sections dark with white text */
+    .page-header,
+    .hero .carousel-slide,
+    .sponsor-section,
+    .cta-banner {
+        background: linear-gradient(135deg, #002244 0%, #003366 100%);
+        color: #ffffff;
+    }
+
+    .hero-content {
+        color: #ffffff;
+    }
+
+    /* Ensure footer stays dark */
+    footer {
+        background: #0a0a0a;
+        color: #ffffff;
+    }
+
+    /* Adjust card shadows for dark mode */
+    .card {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        background: #252525;
+    }
+
+    .card:hover {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Mobile menu adjustments */
+    .mobile-menu {
+        background: #1e1e1e;
+    }
+
+    .mobile-menu a {
+        color: #e0e0e0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-menu a:hover,
+    .mobile-menu a:active {
+        background: #2a2a2a;
+        color: var(--accent-gold);
+    }
+
+    /* Timeline adjustments */
+    .timeline-content {
+        background: #252525;
+    }
+
+    /* Sponsor benefits list */
+    .sponsor-benefits-list li {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 184, 28, 0.2);
+    }
+
+    /* Ensure secondary buttons are visible on dark backgrounds */
+    .btn-secondary {
+        border-color: #ffffff;
+        color: #ffffff;
+    }
+
+    .btn-secondary:hover {
+        background: #ffffff;
+        color: #003366;
+    }
+
+    /* Blog images background */
+    .blog-img,
+    .sponsor-logos-placeholder {
+        background: linear-gradient(135deg, #2a2a2a, #333);
+    }
+
+    /* Sponsor logos background */
+    .sponsor-logos {
+        background: #1e1e1e;
+    }
+
+    /* Ensure links in footer are visible */
+    footer a {
+        color: #ffffff;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .btn-primary {
+        color: #003366;
     }
 }
