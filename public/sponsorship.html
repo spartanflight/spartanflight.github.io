@@ -70,14 +70,30 @@
         .sponsor-method-card .btn {
             width: 100%;
             text-align: center;
+            margin-top: auto;
+        }
+
+        .sponsor-method-card {
+            display: flex;
+            flex-direction: column;
         }
 
         .pdf-section-wrapper {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 2rem;
             margin-top: 3rem;
+        }
+
+        .pdf-section-header {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
             align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .pdf-section-header {
+                grid-template-columns: 1fr;
+            }
         }
 
         .pdf-viewer-container {
@@ -184,12 +200,8 @@
             margin-bottom: 0.75rem;
         }
 
-        @media (max-width: 768px) {
+            @media (max-width: 768px) {
             .sponsor-methods-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .pdf-section-wrapper {
                 grid-template-columns: 1fr;
             }
 
@@ -244,23 +256,25 @@
                 </div>
             </div>
 
-            <div id="corporate" class="pdf-section-wrapper">
-                <div>
-                    <h2>Corporate Sponsorship Packet</h2>
-                    <p class="section-intro">Download our comprehensive sponsorship packet to learn about sponsorship tiers, benefits, and how your company can support Spartan Flight.</p>
-                    <div class="pdf-viewer-container">
-                        <iframe id="pdfViewer" src="sponsorship-packet.pdf#view=FitH&page=1" type="application/pdf" title="Sponsorship Packet PDF"></iframe>
+            <div id="corporate" class="pdf-section-wrapper" style="scroll-margin-top: 100px;">
+                <div class="pdf-section-header">
+                    <div class="pdf-sidebar">
+                        <h3>Get Started</h3>
+                        <p><strong>For Corporate sponsorships, parts, or collaboration:</strong></p>
+                        <p>Contact <strong>Ethan or Ben</strong> at <a href="mailto:spartanflightsjsu@gmail.com">spartanflightsjsu@gmail.com</a> and we will reach out as soon as possible.</p>
+                        <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-light);">We're always open to discussing custom sponsorship arrangements that work for your business.</p>
                     </div>
-                    <div class="pdf-download-btn">
-                        <a href="sponsorship-packet.pdf" download class="btn btn-primary">Download PDF</a>
-                        <a href="sponsors.html" class="btn btn-primary" style="background: var(--primary-blue); color: var(--white); border: 2px solid var(--primary-blue);">View our Sponsors</a>
+                    <div>
+                        <h2>Corporate Sponsorship Packet</h2>
+                        <p class="section-intro">Download our comprehensive sponsorship packet to learn about sponsorship tiers, benefits, and how your company can support Spartan Flight.</p>
                     </div>
                 </div>
-                <div class="pdf-sidebar">
-                    <h3>Get Started</h3>
-                    <p><strong>For Corporate sponsorships, parts, or collaboration:</strong></p>
-                    <p>Contact <strong>Ethan or Ben</strong> at <a href="mailto:spartanflightsjsu@gmail.com">spartanflightsjsu@gmail.com</a> and we will reach out as soon as possible.</p>
-                    <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-light);">We're always open to discussing custom sponsorship arrangements that work for your business.</p>
+                <div class="pdf-viewer-container">
+                    <iframe id="pdfViewer" src="sponsorship-packet.pdf#view=FitH&page=1" type="application/pdf" title="Sponsorship Packet PDF"></iframe>
+                </div>
+                <div class="pdf-download-btn">
+                    <a href="sponsorship-packet.pdf" download class="btn btn-primary">Download PDF</a>
+                    <a href="sponsors.html" class="btn btn-primary" style="background: var(--primary-blue); color: var(--white); border: 2px solid var(--primary-blue);">View our Sponsors</a>
                 </div>
             </div>
         </div>
@@ -268,7 +282,7 @@
 
     <section class="light">
         <div class="section-container">
-            <div id="individual" class="individual-donation-section">
+            <div id="individual" class="individual-donation-section" style="scroll-margin-top: 100px;">
                 <h2>Individual Donations via Give Now</h2>
                 <p class="section-intro">For smaller and individual donations, we accept contributions through SJSU's Give Now platform. This option is intended for individual supporters and smaller donations, not corporate, part, or small business sponsorships.</p>
                 
